@@ -3,7 +3,7 @@ const router = express.Router()
 
 const queries = require('../database/queries')
 
-router.get('/gettingready', (request, response, next) => {
+router.get('/', (request, response, next) => {
     queries
         .listGettingReadyPics()
         .then(gettingready => {

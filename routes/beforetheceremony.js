@@ -3,7 +3,7 @@ const router = express.Router()
 
 const queries = require('../database/queries')
 
-router.get('/beforetheceremony', (request, response, next) => {
+router.get('/', (request, response, next) => {
     queries
         .listBeforeTheCeremonyPics()
         .then(beforetheceremony => {

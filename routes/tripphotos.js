@@ -3,7 +3,7 @@ const router = express.Router()
 
 const queries = require('../database/queries')
 
-router.get('/tripphotos', (request, response, next) => {
+router.get('/', (request, response, next) => {
     queries
         .listTripPhotos()
         .then(tripphotos => {
@@ -25,7 +25,7 @@ router.get('/:id', (request, response, next) => {
         .catch(next);
 });
 
-router.post('/tripphotos', (request, response, next) => {
+router.post('/', (request, response, next) => {
     queries
         .createTripPhotos(request.body)
         .then(item => {
