@@ -2,13 +2,14 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const bodyParser = require('body-parser')
-//const morgan = require('morgan')
-//const port = parseInt(process.env.PORT || 3000)
-//app.use(morgan('dev'))
-app.use(bodyParser.json())
 
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
 app.use(cors())
 
+//route constants
 const gettingready = require('./routes/gettingready')
 const beforetheceremony = require('./routes/beforetheceremony')
 const ceremony = require('./routes/ceremony')
@@ -16,6 +17,7 @@ const mrandmrs = require('./routes/mrandmrs')
 const reception = require('./routes/reception')
 const tripphotos = require('./routes/tripphotos')
 
+//using routes
 app.use('/gettingready', gettingready)
 app.use('/beforetheceremony', beforetheceremony)
 app.use('/ceremony', ceremony)
