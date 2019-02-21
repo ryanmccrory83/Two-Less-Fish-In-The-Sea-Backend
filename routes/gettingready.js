@@ -14,5 +14,14 @@ router.get('/gettingready', (request, response, next) => {
         })
         .catch(next)
 })
+router.get('/:id', (request, response, next) => {
+    queries.getGettingReadyPics(request.params.id)
+        .then(gettingready => {
+            response.json({
+                gettingready
+            });
+        })
+        .catch(next);
+});
 
 module.exports = router

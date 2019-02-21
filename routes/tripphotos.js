@@ -15,6 +15,16 @@ router.get('/tripphotos', (request, response, next) => {
         .catch(next)
 })
 
+router.get('/:id', (request, response, next) => {
+    queries.getTripPhotos(request.params.id)
+        .then(tripphotos => {
+            response.json({
+                tripphotos
+            });
+        })
+        .catch(next);
+});
+
 router.post('/tripphotos', (request, response, next) => {
     queries
         .createTripPhotos(request.body)

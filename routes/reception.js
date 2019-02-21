@@ -14,5 +14,14 @@ router.get('/mrandmrs', (request, response, next) => {
         })
         .catch(next)
 })
+router.get('/:id', (request, response, next) => {
+    queries.getReceiptionPics(request.params.id)
+        .then(reception => {
+            response.json({
+                reception
+            });
+        })
+        .catch(next);
+});
 
 module.exports = router

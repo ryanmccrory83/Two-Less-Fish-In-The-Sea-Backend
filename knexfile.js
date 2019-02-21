@@ -1,5 +1,5 @@
 // Update with your config settings.
-require('dotenv').config()
+require('dotenv').load()
 
 module.exports = {
   development: {

@@ -14,5 +14,14 @@ router.get('/ceremony', (request, response, next) => {
         })
         .catch(next)
 })
+router.get('/:id', (request, response, next) => {
+    queries.getTheCeremonyPics(request.params.id)
+        .then(ceremony => {
+            response.json({
+                ceremony
+            });
+        })
+        .catch(next);
+});
 
 module.exports = router
