@@ -5,12 +5,12 @@ const queries = require('../database/queries')
 
 router.get('/', (request, response, next) => {
     queries
-        .listMrAndMrsPics()
-        .then(mrandmrs => {
+        .listReceptionPics()
+        .then(reception => {
             response.json({
-                mrandmrs
+                reception
             })
-            console.log('this is mrandmrs route')
+            console.log('this is reception route')
         })
         .catch(next)
 })
