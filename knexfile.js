@@ -1,7 +1,5 @@
 // Update with your config settings.
-require('dotenv').config({
-  path: 'path_to_env_file'
-})
+require('dotenv').config()
 
 module.exports = {
   development: {
